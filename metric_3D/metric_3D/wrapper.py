@@ -5,6 +5,9 @@ import numpy as np
 import numpy.typing as npt
 import torch
 from huggingface_hub import hf_hub_download
+from sklearn.linear_model import LinearRegression
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import PolynomialFeatures
 
 try:
     from mmcv.utils import Config, DictAction
@@ -250,3 +253,24 @@ class Metric3DWrapper:
 
         cam_model = np.stack([x_center, y_center, fov_x, fov_y], axis=2)
         return cam_model
+
+
+def fuse_depths(
+    stereo_depth: npt.NDArray[np.float32], mono_depth: npt.NDArray[np.float32]
+) -> npt.NDArray[np.float32]:
+
+    # Filter out valid (non-NaN) corresponding points
+    valid_indices = ~(np.isnan(stereo_depth) | np.isnan(mono_depth))
+    x = mono_depth[valid_indices]
+    y = stereo_depth[valid_indices]
+
+    # normalize x (seems to help mitigate deformation)
+    x = x / max(x)
+
+    # Model with polynomial features
+    degree = 4  # Degree of the polynomial
+    model = make_pipeline(PolynomialFeatures(degree), LinearRegression())
+    model.fit(x.reshape(-1, 1), y.reshape(-1, 1))
+    fused_depth = model.predict(x.reshape(-1, 1)).reshape(stereo_depth.shape)
+
+    return np.array(fused_depth, dtype=np.float32)
