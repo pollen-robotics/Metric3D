@@ -1,0 +1,9 @@
+huggingface_hub
+torch>=2.0.1
+opencv-contrib-python==4.8.0.74
+torchvision==0.15.2
+numpy==1.23.1
+xformers==0.0.21
+pillow==10.3.0
+mmcv==2.2.0
+timm==0.9.16
