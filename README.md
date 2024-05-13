@@ -6,6 +6,25 @@ Installation :
 pip install -e .
 ```
 
+Usage : 
+```python
+import cv2
+from metric_3D.wrapper import Metric3DWrapper
+from metric_3D.wrapper import fuse_depths
+
+K = ...
+M = Metric3DWrapper(K)
+
+rgb = ...
+
+depth = M.infer(rgb)
+
+# to fuse stereo depth and monocular depth
+
+stereo_depth = ...
+fused_depth = fuse_depths(stereo_depth, depth)
+```
+
 # 🚀 Metric3D Project 🚀
 
 **Official PyTorch implementation of Metric3Dv1 and Metric3Dv2:**   
