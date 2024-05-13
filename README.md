@@ -1,3 +1,11 @@
+# Pollen Readme
+
+Installation : 
+
+```bash
+pip install -e .
+```
+
 # 🚀 Metric3D Project 🚀
 
 **Official PyTorch implementation of Metric3Dv1 and Metric3Dv2:**   
@@ -72,37 +80,37 @@ Metric3D is a strong and robust geometry foundation model for high-quality and z
 [//]: # (#### Finetuned)
 Our models rank 1st on the routing KITTI and NYU benchmarks.
 
-|               | Backbone    | KITTI δ1 ↑ | KITTI δ2  ↑  | KITTI AbsRel  ↓ | KITTI RMSE  ↓ | KITTI RMS_log  ↓ | NYU δ1 ↑ | NYU δ2 ↑  | NYU AbsRel  ↓ | NYU RMSE  ↓ | NYU log10  ↓ |
-|---------------|-------------|------------|-------------|-----------------|---------------|------------------|----------|----------|---------------|-------------|--------------|
-| ZoeDepth      | ViT-Large   | 0.971      | 0.995                  | 0.053           | 2.281         | 0.082            | 0.953    | 0.995        | 0.077         | 0.277       | 0.033        |
-| ZeroDepth     | ResNet-18   | 0.968      | 0.996                   | 0.057           | 2.087         | 0.083            | 0.954    | 0.995           | 0.074         | 0.269       | 0.103        |
-| IEBins        | SwinT-Large | 0.978      | 0.998                  | 0.050           | 2.011         | 0.075            | 0.936    | 0.992           | 0.087         | 0.314       | 0.031        |
-| DepthAnything | ViT-Large   | 0.982      | 0.998                  | 0.046           | 1.985         | 0.069            | 0.984    | 0.998           | 0.056         | 0.206       | 0.024        |
-| Ours          | ViT-Large   | 0.985      | 0.998       | 0.999                        | 1.985         | 0.064            | 0.989    | 0.998           | 0.047         | 0.183       | 0.020        |
-| Ours          | ViT-giant2  | 0.989      | 0.998       | 1.000                        | 1.766         | 0.060            | 0.987    | 0.997           | 0.045         | 0.187       | 0.015        |
+|               | Backbone    | KITTI δ1 ↑ | KITTI δ2  ↑ | KITTI AbsRel  ↓ | KITTI RMSE  ↓ | KITTI RMS_log  ↓ | NYU δ1 ↑ | NYU δ2 ↑ | NYU AbsRel  ↓ | NYU RMSE  ↓ | NYU log10  ↓ |
+| ------------- | ----------- | ---------- | ----------- | --------------- | ------------- | ---------------- | -------- | -------- | ------------- | ----------- | ------------ |
+| ZoeDepth      | ViT-Large   | 0.971      | 0.995       | 0.053           | 2.281         | 0.082            | 0.953    | 0.995    | 0.077         | 0.277       | 0.033        |
+| ZeroDepth     | ResNet-18   | 0.968      | 0.996       | 0.057           | 2.087         | 0.083            | 0.954    | 0.995    | 0.074         | 0.269       | 0.103        |
+| IEBins        | SwinT-Large | 0.978      | 0.998       | 0.050           | 2.011         | 0.075            | 0.936    | 0.992    | 0.087         | 0.314       | 0.031        |
+| DepthAnything | ViT-Large   | 0.982      | 0.998       | 0.046           | 1.985         | 0.069            | 0.984    | 0.998    | 0.056         | 0.206       | 0.024        |
+| Ours          | ViT-Large   | 0.985      | 0.998       | 0.999           | 1.985         | 0.064            | 0.989    | 0.998    | 0.047         | 0.183       | 0.020        |
+| Ours          | ViT-giant2  | 0.989      | 0.998       | 1.000           | 1.766         | 0.060            | 0.987    | 0.997    | 0.045         | 0.187       | 0.015        |
 
 ### Affine-invariant Depth
 Even compared to recent affine-invariant depth methods (Marigold and Depth Anything), our metric-depth (and normal) models still show superior performance. 
 
-|                       | #Data for Pretrain and Train                 | KITTI Absrel ↓ | KITTI δ1 ↑ | NYUv2 AbsRel  ↓ | NYUv2 δ1 ↑ | DIODE-Full AbsRel ↓ | DIODE-Full δ1 ↑ | Eth3d AbsRel  ↓ | Eth3d δ1 ↑ |
-|-----------------------|----------------------------------------------|----------------|------------|-----------------|------------|---------------------|-----------------|----------------------|------------|
-| OmniData (v2, ViT-L)       | 1.3M + 12.2M                                 | 0.069          | 0.948      | 0.074           | 0.945      | 0.149               | 0.835           | 0.166                | 0.778      | 
-| MariGold  (LDMv2)     | 5B + 74K                                     | 0.099          | 0.916      | 0.055           | 0.961      | 0.308               | 0.773           | 0.127                | 0.960      | 
-| DepthAnything (ViT-L) | 142M + 63M                                   | 0.076          | 0.947      | 0.043           | 0.981      | 0.277               | 0.759           | 0.065                | 0.882      | 
-| Ours (ViT-L)          | 142M + 16M                                   | 0.042          | 0.979      | 0.042           | 0.980      | 0.141               | 0.882           | 0.042                | 0.987      | 
-| Ours (ViT-g)          | 142M + 16M                                   | 0.043          | 0.982      | 0.043           | 0.981      | 0.136               | 0.895           | 0.042                | 0.983      | 
+|                       | #Data for Pretrain and Train | KITTI Absrel ↓ | KITTI δ1 ↑ | NYUv2 AbsRel  ↓ | NYUv2 δ1 ↑ | DIODE-Full AbsRel ↓ | DIODE-Full δ1 ↑ | Eth3d AbsRel  ↓ | Eth3d δ1 ↑ |
+| --------------------- | ---------------------------- | -------------- | ---------- | --------------- | ---------- | ------------------- | --------------- | --------------- | ---------- |
+| OmniData (v2, ViT-L)  | 1.3M + 12.2M                 | 0.069          | 0.948      | 0.074           | 0.945      | 0.149               | 0.835           | 0.166           | 0.778      |
+| MariGold  (LDMv2)     | 5B + 74K                     | 0.099          | 0.916      | 0.055           | 0.961      | 0.308               | 0.773           | 0.127           | 0.960      |
+| DepthAnything (ViT-L) | 142M + 63M                   | 0.076          | 0.947      | 0.043           | 0.981      | 0.277               | 0.759           | 0.065           | 0.882      |
+| Ours (ViT-L)          | 142M + 16M                   | 0.042          | 0.979      | 0.042           | 0.980      | 0.141               | 0.882           | 0.042           | 0.987      |
+| Ours (ViT-g)          | 142M + 16M                   | 0.043          | 0.982      | 0.043           | 0.981      | 0.136               | 0.895           | 0.042           | 0.983      |
 
 
 ### Surface Normal
 Our models also show powerful performance on normal benchmarks.
 
-|              | NYU 11.25° ↑ | NYU Mean ↓ | NYU RMS ↓ | ScanNet 11.25° ↑ | ScanNet Mean ↓ | ScanNet RMS ↓ | iBims 11.25° ↑ | iBims Mean ↓ | iBims RMS ↓ | 
-|--------------|----------|----------|-----------|-----------------|----------------|--------------|---------------|--------------|-------------|
-| EESNU        | 0.597    | 16.0     | 24.7      | 0.711           | 11.8           | 20.3         | 0.585         | 20.0         | -           | 
-| IronDepth    | -        | -        | -         | -               | -              | -            | 0.431         | 25.3         | 37.4        | 
-| PolyMax      | 0.656    | 13.1     | 20.4      | -               | -              | -            | -             | -            | -           |
-| Ours (ViT-L) | 0.688    | 12.0     | 19.2      | 0.760           | 9.9            | 16.4         | 0.694         | 19.4         | 34.9        | 
-| Ours (ViT-g)   | 0.662    | 13.2     | 20.2      | 0.778           | 9.2            | 15.3         | 0.697         | 19.6         | 35.2        |
+|              | NYU 11.25° ↑ | NYU Mean ↓ | NYU RMS ↓ | ScanNet 11.25° ↑ | ScanNet Mean ↓ | ScanNet RMS ↓ | iBims 11.25° ↑ | iBims Mean ↓ | iBims RMS ↓ |
+| ------------ | ------------ | ---------- | --------- | ---------------- | -------------- | ------------- | -------------- | ------------ | ----------- |
+| EESNU        | 0.597        | 16.0       | 24.7      | 0.711            | 11.8           | 20.3          | 0.585          | 20.0         | -           |
+| IronDepth    | -            | -          | -         | -                | -              | -             | 0.431          | 25.3         | 37.4        |
+| PolyMax      | 0.656        | 13.1       | 20.4      | -                | -              | -             | -              | -            | -           |
+| Ours (ViT-L) | 0.688        | 12.0       | 19.2      | 0.760            | 9.9            | 16.4          | 0.694          | 19.4         | 34.9        |
+| Ours (ViT-g) | 0.662        | 13.2       | 20.2      | 0.778            | 9.2            | 15.3          | 0.697          | 19.6         | 35.2        |
 
 
 
@@ -286,13 +294,13 @@ Supported models: `metric3d_convnext_large`, `metric3d_vit_small`, `metric3d_vit
 We also provided a minimal working example in [hubconf.py](https://github.com/YvanYin/Metric3D/blob/main/hubconf.py#L122), which hopefully makes everything clearer.
 
 ### Download Checkpoint
-|      |       Encoder       |      Decoder      |                                               Link                                                |
-|:----:|:-------------------:|:-----------------:|:-------------------------------------------------------------------------------------------------:|
-| v1-T |    ConvNeXt-Tiny    | Hourglass-Decoder |                                            Coming soon                                            |
-| v1-L |   ConvNeXt-Large    | Hourglass-Decoder | [Download](https://drive.google.com/file/d/1KVINiBkVpJylx_6z1lAC7CQ4kmn-RJRN/view?usp=drive_link) |
-| v2-S | DINO2reg-ViT-Small  |    RAFT-4iter     | [Download](https://drive.google.com/file/d/1YfmvXwpWmhLg3jSxnhT7LvY0yawlXcr_/view?usp=drive_link) |
-| v2-L | DINO2reg-ViT-Large  |    RAFT-8iter     | [Download](https://drive.google.com/file/d/1eT2gG-kwsVzNy5nJrbm4KC-9DbNKyLnr/view?usp=drive_link) |
-| v2-g | DINO2reg-ViT-giant2 |    RAFT-8iter     | [Download 🤗](https://huggingface.co/JUGGHM/Metric3D/blob/main/metric_depth_vit_giant2_800k.pth) |
+|       |       Encoder       |      Decoder      |                                               Link                                                |
+| :---: | :-----------------: | :---------------: | :-----------------------------------------------------------------------------------------------: |
+| v1-T  |    ConvNeXt-Tiny    | Hourglass-Decoder |                                            Coming soon                                            |
+| v1-L  |   ConvNeXt-Large    | Hourglass-Decoder | [Download](https://drive.google.com/file/d/1KVINiBkVpJylx_6z1lAC7CQ4kmn-RJRN/view?usp=drive_link) |
+| v2-S  | DINO2reg-ViT-Small  |    RAFT-4iter     | [Download](https://drive.google.com/file/d/1YfmvXwpWmhLg3jSxnhT7LvY0yawlXcr_/view?usp=drive_link) |
+| v2-L  | DINO2reg-ViT-Large  |    RAFT-8iter     | [Download](https://drive.google.com/file/d/1eT2gG-kwsVzNy5nJrbm4KC-9DbNKyLnr/view?usp=drive_link) |
+| v2-g  | DINO2reg-ViT-giant2 |    RAFT-8iter     |  [Download 🤗](https://huggingface.co/JUGGHM/Metric3D/blob/main/metric_depth_vit_giant2_800k.pth)  |
 
 ### Dataset Mode
 1. put the trained ckpt file ```model.pth``` in ```weight/```.
