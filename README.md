@@ -8,7 +8,6 @@ pip install -e .
 
 Usage : 
 ```python
-import cv2
 from metric_3D.wrapper import Metric3DWrapper
 from metric_3D.wrapper import fuse_depths
 
