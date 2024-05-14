@@ -1,9 +1,0 @@
-huggingface_hub
-torch==2.2.2
-opencv-contrib-python==4.8.0.74
-numpy==1.23.1
-pillow==10.3.0
-mmcv
-timm
-xformers
-torchvision
