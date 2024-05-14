@@ -2,3 +2,4 @@ work_dirs
 show_dirs
 *__pycache__*
 test_dataloader_*
+metric_3D/metric_3D.egg-info/*
